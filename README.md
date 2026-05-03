@@ -47,8 +47,8 @@ dotnet run --project src/CrmApp.WinForms
 ```
 
 Демо-логины (создаются при первом запуске, если `users.json` пуст):
-- `admin` / `admin` — администратор
-- `manager` / `manager` — менеджер
+- `admin` / `admin` - администратор
+- `manager` / `manager` - менеджер
 
 ## Сборка standalone-exe
 
@@ -58,7 +58,7 @@ dotnet run --project src/CrmApp.WinForms
 publish.cmd
 ```
 
-Скрипт делает три вещи:
+Скрипт делает:
 1. `dotnet publish` в Release с `PublishSingleFile=true` и `--self-contained` — получится один `CrmApp.exe` ~72 MB.
 2. Копирует exe в `%LOCALAPPDATA%\CrmApp\CrmApp.exe`.
 3. Создаёт ярлык `CRM.lnk` на рабочем столе.
@@ -67,4 +67,4 @@ publish.cmd
 
 ## Лицензия
 
-Учебный проект. Используйте на свой страх и риск.
+Учебный проект. Использовать на свой страх и риск.
