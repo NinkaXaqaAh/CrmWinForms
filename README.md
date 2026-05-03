@@ -59,7 +59,7 @@ publish.cmd
 ```
 
 Скрипт делает:
-1. `dotnet publish` в Release с `PublishSingleFile=true` и `--self-contained` — получится один `CrmApp.exe` ~72 MB.
+1. `dotnet publish` в Release с `PublishSingleFile=true` и `--self-contained` - получится один `CrmApp.exe` ~72 MB.
 2. Копирует exe в `%LOCALAPPDATA%\CrmApp\CrmApp.exe`.
 3. Создаёт ярлык `CRM.lnk` на рабочем столе.
 
