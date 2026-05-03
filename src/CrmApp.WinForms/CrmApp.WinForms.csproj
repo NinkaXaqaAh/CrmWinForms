@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    UI-слой: WinForms MDI-приложение.
+    TFM net10.0-windows + UseWindowsForms — стандартная связка для WinForms на .NET 10.
+    OutputType=WinExe убирает консольное окно при запуске.
+  -->
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>CrmApp.WinForms</RootNamespace>
+    <AssemblyName>CrmApp</AssemblyName>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <!-- DPI awareness для современных дисплеев (4k без размытия). -->
+    <ApplicationManifest></ApplicationManifest>
+    <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
+    <ApplicationDefaultFont>Segoe UI, 9pt</ApplicationDefaultFont>
+    <ApplicationVisualStyles>true</ApplicationVisualStyles>
+    <!--
+      NU1701 — транзитивные SkiaSharp.Views.WindowsForms / OpenTK не имеют явного net10.0 TFM
+      и подцепляются как net4.x. На практике работают, но фоном генерируют предупреждение,
+      которое из-за TreatWarningsAsErrors=true ломает restore. Гасим узко именно тут.
+    -->
+    <NoWarn>$(NoWarn);NU1701</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CrmApp.Core\CrmApp.Core.csproj" />
+    <ProjectReference Include="..\CrmApp.Infrastructure\CrmApp.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Реализации Microsoft.Extensions.* (composition root). -->
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+    <PackageReference Include="Microsoft.Extensions.Logging" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" />
+
+    <!-- Графики на дашборде. -->
+    <PackageReference Include="LiveChartsCore.SkiaSharpView.WinForms" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Конфиг-файлы копируются рядом с exe, чтобы Configuration их видел. -->
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="appsettings.Development.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

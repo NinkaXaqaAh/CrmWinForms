@@ -1,0 +1,43 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 18.0.0.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A1A1A1A1-0001-0001-0001-000000000001}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrmApp.Core", "src\CrmApp.Core\CrmApp.Core.csproj", "{B2B2B2B2-0001-0001-0001-000000000001}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrmApp.Infrastructure", "src\CrmApp.Infrastructure\CrmApp.Infrastructure.csproj", "{B2B2B2B2-0001-0001-0001-000000000002}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrmApp.WinForms", "src\CrmApp.WinForms\CrmApp.WinForms.csproj", "{B2B2B2B2-0001-0001-0001-000000000003}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2B2B2B2-0001-0001-0001-000000000001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B2B2B2-0001-0001-0001-000000000001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B2B2B2-0001-0001-0001-000000000001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B2B2B2-0001-0001-0001-000000000001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2B2B2B2-0001-0001-0001-000000000002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B2B2B2-0001-0001-0001-000000000002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B2B2B2-0001-0001-0001-000000000002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B2B2B2-0001-0001-0001-000000000002}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2B2B2B2-0001-0001-0001-000000000003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B2B2B2-0001-0001-0001-000000000003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B2B2B2-0001-0001-0001-000000000003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B2B2B2-0001-0001-0001-000000000003}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B2B2B2B2-0001-0001-0001-000000000001} = {A1A1A1A1-0001-0001-0001-000000000001}
+		{B2B2B2B2-0001-0001-0001-000000000002} = {A1A1A1A1-0001-0001-0001-000000000001}
+		{B2B2B2B2-0001-0001-0001-000000000003} = {A1A1A1A1-0001-0001-0001-000000000001}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3C3C3C3-0001-0001-0001-000000000001}
+	EndGlobalSection
+EndGlobal

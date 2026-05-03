@@ -1,0 +1,50 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = crlf
+insert_final_newline = true
+indent_style = space
+trim_trailing_whitespace = true
+
+[*.{cs,csproj,props,targets,json,xml,yml,md}]
+indent_size = 4
+
+[*.{json,yml}]
+indent_size = 2
+
+[*.cs]
+# Стиль using
+csharp_using_directive_placement = outside_namespace:warning
+csharp_style_namespace_declarations = file_scoped:warning
+
+# Var — где тип очевиден, var; иначе явный тип.
+csharp_style_var_for_built_in_types = false:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+csharp_style_var_elsewhere = false:suggestion
+
+# Современный C#
+csharp_style_expression_bodied_methods = when_on_single_line:suggestion
+csharp_style_expression_bodied_properties = true:suggestion
+csharp_style_pattern_matching_over_is_with_cast_check = true:warning
+csharp_style_throw_expression = true:suggestion
+csharp_prefer_simple_using_statement = true:suggestion
+
+# Анализаторы
+dotnet_diagnostic.CA1305.severity = none      # IFormatProvider — для русскоязычного UI лишнее
+dotnet_diagnostic.CA1310.severity = none      # StringComparison явный — там, где нужно
+dotnet_diagnostic.CA1816.severity = none      # GC.SuppressFinalize — не везде осмысленно
+dotnet_diagnostic.IDE0058.severity = none     # игнор возвращаемого значения
+
+# CS-warnings, которые часто всплывают в WinForms-формах
+dotnet_diagnostic.CA1416.severity = none      # WindowsForms — только Windows, и это ОК
+
+# Перф-микрооптимизации, не оправданные для desktop-CRM с десятками операций в секунду.
+# Если приложение когда-нибудь упрётся в лог-производительность — включить и переписать.
+dotnet_diagnostic.CA1848.severity = none      # LoggerMessage делегаты вместо ILogger.LogX
+dotnet_diagnostic.CA1873.severity = none      # ленивая оценка аргументов LogX
+dotnet_diagnostic.CA1859.severity = none      # конкретный тип вместо интерфейса для скорости
+dotnet_diagnostic.CA1826.severity = none      # Skip/Take на индексированных коллекциях
+
+# WinForms Designer-warnings, не относящиеся к коду, написанному вручную.
+dotnet_diagnostic.WFO1000.severity = none     # сериализация properties UserControl'ов

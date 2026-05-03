@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Инфраструктурный слой: JSON-репозитории, доменные сервисы, экспорт.
+    Зависит от Core; не знает о UI.
+  -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>CrmApp.Infrastructure</RootNamespace>
+    <AssemblyName>CrmApp.Infrastructure</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CrmApp.Core\CrmApp.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- DI, Configuration, Logging — abstractions достаточно: реализация подтянется в WinForms. -->
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Options" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" />
+
+    <!-- Экспорт отчётов — будут использованы в Reporting/Export на этапе 4. -->
+    <PackageReference Include="ClosedXML" />
+    <PackageReference Include="QuestPDF" />
+  </ItemGroup>
+
+</Project>

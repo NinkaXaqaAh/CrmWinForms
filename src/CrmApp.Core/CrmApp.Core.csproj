@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Доменное ядро. Никаких ссылок на UI или Infrastructure.
+    Только модели, enum'ы, абстракции, валидаторы.
+    Кроссплатформенный TFM — чтобы ядро можно было вытащить в другой проект (web/api).
+  -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>CrmApp.Core</RootNamespace>
+    <AssemblyName>CrmApp.Core</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" />
+  </ItemGroup>
+
+</Project>

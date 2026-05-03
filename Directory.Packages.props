@@ -1,0 +1,47 @@
+<Project>
+  <!--
+    Central Package Management — версии всех NuGet-пакетов хранятся тут.
+    В csproj пишем только <PackageReference Include="..." />, без Version.
+    Это убирает расхождения версий между проектами и облегчает обновления.
+  -->
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Microsoft.Extensions.* — DI, Configuration, Logging, Hosting. Соответствуют .NET 10. -->
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Logging" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Options" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.0" />
+
+    <!-- Валидация. v11.x — последняя бесплатная (Apache-2.0). v12+ стал коммерческим. -->
+    <PackageVersion Include="FluentValidation" Version="11.11.0" />
+
+    <!-- Графики на дашборде. MIT, активно поддерживается, лучшая замена устаревшему System.Windows.Forms.DataVisualization. -->
+    <PackageVersion Include="LiveChartsCore.SkiaSharpView.WinForms" Version="2.0.0-rc5.4" />
+
+    <!-- Excel-экспорт отчётов. MIT. -->
+    <PackageVersion Include="ClosedXML" Version="0.105.0" />
+
+    <!-- PDF-экспорт. Community-лицензия бесплатна для обучения и малого бизнеса. -->
+    <PackageVersion Include="QuestPDF" Version="2025.1.0" />
+
+    <!-- Тесты. -->
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageVersion Include="xunit" Version="2.9.3" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.8.2" />
+    <PackageVersion Include="coverlet.collector" Version="6.0.2" />
+  </ItemGroup>
+</Project>
