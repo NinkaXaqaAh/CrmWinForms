@@ -53,9 +53,5 @@ publish/
 # Артефакт make-icon.ps1 — preview-картинка генерируется из Icon.jpg
 Icon-preview.png
 
-# Внутренние инструкции для Claude Code — не для публичного репозитория
-CLAUDE.md
-.claude/
-
 # Тесты — по решению владельца репозитория не публикуются
 tests/
