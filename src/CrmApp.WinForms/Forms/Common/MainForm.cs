@@ -37,6 +37,9 @@ public partial class MainForm : Form
 
         InitializeComponent();
 
+        // Иконка приложения в заголовке окна и панели задач.
+        Icon = AppIcon.Default;
+
         // Заголовок отражает вошедшего пользователя.
         var u = _userContext.Current;
         Text = u is null

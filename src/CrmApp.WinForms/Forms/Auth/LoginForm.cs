@@ -1,4 +1,5 @@
 using CrmApp.Core.Abstractions;
+using CrmApp.WinForms.Theming;
 
 namespace CrmApp.WinForms.Forms.Auth;
 
@@ -16,6 +17,9 @@ public partial class LoginForm : Form
         _userContext = userContext;
 
         InitializeComponent();
+
+        // Иконка приложения в заголовке окна и панели задач.
+        Icon = AppIcon.Default;
 
         // Подсказка про seed-пользователей в подножии формы.
         // На Этапе 4/5 это уберём за галку "показать подсказку".
